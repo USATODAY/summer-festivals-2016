@@ -1,0 +1,56 @@
+{% extends 'layouts/application.html' %}
+{% block head %}
+<style>
+    body {
+        background: #E6E6E6;
+        padding: 2em !important;
+    }
+
+    pre {
+        background: white;
+        padding: 1em;
+        width: 600px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<h3>Embed Preview</h3>
+<div style="width: 540px; max-width: 100%">
+    <script></script>
+    <iframe class="interactive-map-iframe" src="/" width="100%" height="500" frameborder="none" scrolling="no"></iframe>
+</div>
+<h3>Embed URL</h3>
+<pre>
+http://www.gannett-cdn.com/experiments/usatoday/responsive/{{graphic_config.graphic_slug}}
+</pre>
+{% endblock %}
+{% block javascript %}
+<script>
+        function oembedResizeIframe(els, data) { 
+            for(var i =0; i<els.length;i++){ 
+                els[i].style.height = data.height+"px";
+            }
+        } 
+        function filterNodeList(nodeList, filterFunction) {
+            var results = [];
+            for (var i = 0; i < nodeList.length; i++) {
+                if(filterFunction(nodeList[i])) {
+                    results.push(nodeList[i]);
+                }
+            }
+            return results;
+        }
+        function receiveMessage(event){
+            var embeds = document.querySelectorAll(".interactive-map-iframe");
+            var filteredEmbeds = filterNodeList(embeds, function(embedEl) {
+                var parser = document.createElement('a');
+                parser.href = embedEl.src;
+                var embedPath = parser.pathname;
+                return true;
+            });
+            oembedResizeIframe(filteredEmbeds, event.data);
+        }
+
+        window.addEventListener("message", receiveMessage, false);
+</script>
+{% endblock %}

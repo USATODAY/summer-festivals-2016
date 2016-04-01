@@ -1,0 +1,40 @@
+0.4.3
+----
+* better stepper template slide credits
+* improved design of graphic wrapper
+
+0.4.2
+----
+* fixes mapbox template
+
+0.4.1
+----
+* updates gulp-sass to version 2.x
+
+0.4.0
+----
+* NEW TEMPLATE: stepper
+
+0.3.1
+----
+* adds asset_path to config
+
+0.3.0
+----
+* adds more starting styles and structure
+
+0.2.0
+----
+* fixes and improves bootstrap script
+* changes config files to YAML rather than JSON
+* adds mechanism for creating and using different starter templates
+
+0.1.0
+-----
+* add global namespace to analytics library
+* add analytics library
+* add deploy task
+* add bootstrap script
+* add basic readme and documentation
+* basic project setup
+* start CHANGELOG

@@ -1,0 +1,19 @@
+.graphic-wrapper {
+    border-top: solid 10px $blue;
+    border-radius: 8px;
+    @include BoxShadowHelper(1);
+    margin: 3px auto;
+    max-width: 540px;
+    overflow: hidden;
+    width: calc(100% - 6px);
+}
+
+.graphic-header {
+    background: $extra-light-grey;
+    padding: 1em;
+}
+
+.graphic-footer {
+    background: $extra-light-grey;
+    padding: 1em;
+}
