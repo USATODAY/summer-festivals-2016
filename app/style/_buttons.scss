@@ -1,0 +1,44 @@
+.button {
+  background-color: $blue;
+  color: white;
+  margin: 0 auto;
+  padding: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color .5s;
+  width: 120px;
+  &:hover{
+    cursor: pointer;
+    background-color: $dark-blue;
+    transition: background-color .5s;
+  }
+}
+
+
+.iapp-button-text {
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.iapp-button {
+  background: white;
+  border-radius: 50%;
+  @include BoxShadowHelper(4);
+  color: $blue;
+  height: 80px;
+  text-transform: uppercase;
+  transition: all 250ms ease;
+  width: 80px;
+  z-index: 99;
+  &:hover {
+    @include BoxShadowHelper(5)
+  }
+}
+
+.iapp-button-blue {
+    background: $blue;
+    color: white;
+}

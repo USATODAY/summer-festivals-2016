@@ -1,0 +1,13 @@
+<div class='iapp-last-week-entry'>
+    <h2 class='iapp-last-week-header'><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/sunday-shows/img/<% print(networkGuests[0].last_week_network.toLowerCase())%>.png" alt="<%=networkGuests[0].last_week_network %>" class="iapp-last-week-network-logo" /></h2>
+    <h2 class="iapp-last-week-header"><%=networkGuests[0].showNames[networkGuests[0].last_week_network]%></h2>
+    <% _.each(networkGuests, function(guestObj) { %>
+        <div class="card small-card">
+            
+            <div class="iapp-card-info">
+                <h2 class="iapp-card-info-header"><%= guestObj.guest%></h2>
+                <p class="iapp-card-info-text"><%=guestObj.description%></p>
+            </div>
+        </div>
+    <% })%>
+</div>

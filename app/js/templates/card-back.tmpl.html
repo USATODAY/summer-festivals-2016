@@ -1,0 +1,44 @@
+      <div class="card card-detail">
+      
+        <div class="iapp-detail-image-wrap">
+        </div>
+      
+        <div class="close-card">
+            <img class="iapp-close-card-inner" src="http://www.gannett-cdn.com/experiments/usatoday/2015/02/red-carpet/img/close-icon.svg">
+            
+            </img>
+        </div>
+      
+      
+      
+        <div class="iapp-detail-info">
+            <h2 class="card-back-header"><%= artist.artist %> </h2>
+            <p class="iapp-summary"><span class="label label-default"><%= artist.genre %></span></p>
+            <table class="table">
+                <thead>
+                    
+                    <tr>
+                        <th>Festival</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    
+            <% _.each(artist.festivals, function(festival) { %>
+                <tr class="iapp-card-back-detail-appearance">
+                    <td class="iapp-card-back-detail-appearance-date"><%=festival.full_name%></td><td class="iapp-card-back-detail-appearance-network"><% print(_.findWhere(festivals, {"tagName": festival.tag_name}).date) %></td><td class="iapp-card-back-detail-description"><% print(_.findWhere(festivals, {"tagName": festival.tag_name}).location) %></td>
+                </tr>
+            
+            <%})%>
+
+                </tbody>
+            </table>
+        </div>
+      
+      
+      </div>
+      
+        <div class="iapp-detail-bg"></div> 
+

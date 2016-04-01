@@ -1,0 +1,69 @@
+.iapp-search-button {
+    
+    // margin: 0 auto;
+    // padding: 0.5em;
+    // text-align: center;
+    // width: 8em;
+    button {
+        background: $blue;
+        color: white;
+        font-family: "Futura Today Light", Arial, sans-serif;
+        &:hover {
+            background: $blue;
+            color: white;
+        }
+    }
+}
+
+.search-wrap-container {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 400px;
+}
+
+.iapp-search-input {
+   //  background: none;
+   //  // border: none;
+   //  border-image: none;
+   //  border-style: none;
+   //  border: solid 2px $medium-grey;
+   //  // border-radius: 5px;
+   //  box-shadow: none;
+   //  color: $dark-grey;
+   //  display: block;
+   //  font-family: "Futura Today Demibold", Arial,sans-serif;
+   //  font-size: 1.2em;
+   //  margin: 0 auto 1em auto;
+   //  padding: .5em;
+   //  text-align: center;
+   //  transition: all 250ms ease;
+   //  -webkit-appearance: none; 
+   //  &:focus {
+   //      border: solid 2px $blue;
+   //      outline: none;
+   // }
+}
+
+.no-results-message.alert-danger {
+    background-color: lighten($red, 30);
+    border: darken($red, 20);
+    // border-radius: 5px;
+    color: darken($red, 20);
+    margin: 0 auto;
+    max-width: 90%;
+    // padding: 2em;
+    text-align: center;
+    width: 400px;
+}
+
+.no-results-wrap {
+    display: none;
+}
+
+.no-results-image {
+    margin: 1em auto;
+    width: 70px;
+    img {
+        width: 100%;
+    }
+}

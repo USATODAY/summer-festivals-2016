@@ -1,0 +1,310 @@
+.card {
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  @include BoxShadowHelper(3);
+  color: $dark-grey;
+  
+  margin: 0 auto 2em auto;
+  // padding: 2em;
+  // position: static;
+  transition: transform 800ms ease;
+  
+  &.active {
+
+    transform: translate(0, 0);
+    transition: transform 800ms ease;
+    
+  }
+  &.next {
+    transform: translate(0, 2000px);
+    transition: transform 800ms ease;
+  }
+
+  &.previous {
+      // position: absolute;
+      transform: translate(0, -2000px);
+      transition: transform 800ms ease;
+    }
+    @media(max-width: 800px) {
+      // padding: 4em 2em;
+    }
+}
+
+.chart-labels {
+  padding: 0 40px;
+  margin-top: 2em;
+  width: 100%;
+  @extend .group;
+}
+
+.chart-label {
+  display: inline-block;
+  float: left;
+  font-family: "Futura Today Light", Arial, sans-serif;
+  font-size: 2em;
+  margin-right: 2%;
+  text-align: center;
+  width: 31%;
+}
+
+.age {
+  color: $yellow;
+}
+
+.gender{
+  color: $blue2;
+}
+
+.state {
+  color: $green2;
+}
+
+.card.small-card {
+    background: none;
+}
+
+.small-card {
+  background-color: none;
+  box-shadow: none;
+  // @include BoxShadowHelper(1); 
+  cursor: pointer;
+  float: left;
+  height: auto;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  max-width: 100%;
+  // overflow: hidden;
+  position: relative;
+  text-align: center;
+  transition: none;
+  width: 100px;
+  z-index: 5;
+
+  img {
+    max-width: 50px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  @media (max-width: 500px) {
+    width: calc(33% - 10px);
+  }
+
+
+  p {
+    margin: 0.5em 0 1em 0;
+  }
+   
+}
+
+.iapp-touch-device { 
+  .iapp-feedback-button {
+      opacity: 1;
+      padding: 0.5em 0.5em;
+      transform: translate(0, 0);
+    }
+}
+
+.close-card {
+  // background-image: url('http://www.gannett-cdn.com/experiments/usatoday/2015/02/red-carpet/img/close-icon.svg');
+  background: $blue;
+  @include BoxShadowHelper(2);
+  border-radius: 50%;
+  cursor: pointer;
+  height: 50px;
+  padding: 1em;
+  position: absolute;
+  text-align: right;
+  top: 0em;
+  transform: translate(50%, 0%);
+  transition: all 250ms ease;
+  right: 0em;
+  width: 50px;
+  span {
+    clear: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &:hover {
+    @include BoxShadowHelper(3);
+  }
+}
+
+.iapp-close-card-inner{
+    display: block;
+    width: 100%;
+}
+
+#social {
+  bottom: 2em;
+  position: absolute;
+  right: 2em;
+  @media(max-width: 800px) {
+    position: static;
+    float: right;
+  }
+}
+
+.social-icon{
+  margin: 0;
+  height: 40px;
+  width: 40px;
+}
+
+.social-link {
+  float: left;
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  width: 40px;
+}
+
+.cover-img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.title-overlay {
+  background: rgba(255, 255, 255, 0.3);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  h2 {
+    color: $dark-grey;
+    font-family: "Futura Today Demibold", Arial,sans-serif;
+    font-weight: 500;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 250ms ease;
+  }
+
+ 
+}
+
+.iapp-card-front-image-wrap {
+  height: 60px;
+  position: relative;
+}
+
+.iapp-card-info {
+    padding: 0;
+    text-align: center;
+}
+
+.iapp-card-info-header {
+  font-family: "Futura Today Demibold", Arial,sans-serif;
+  font-size: 1em;
+  margin: 0;
+}
+
+.iapp-card-info-text {
+  color: $medium-grey;
+  font-size: 0.8em;
+  margin: 0.5em 0 1em 0;
+}
+
+.iapp-card-status {
+  height: 100px;
+  left: -50px;
+  top: -50px;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 500ms ease;
+  transform: rotate(-45deg);
+  width: 100px;
+  z-index: 20;
+  @media(max-width: $mid-break) {
+    transition: none;
+  }
+}
+
+.iapp-card-status-liked {
+  background-color: $blue;
+}
+
+.iapp-card-status-disliked {
+  background-color: $medium-grey;
+}
+
+.iapp-liked .iapp-card-status-liked {
+  opacity: 1;
+}
+
+.iapp-disliked .iapp-card-status-disliked {
+  opacity: 1;
+}
+
+.iapp-card-status-icon {
+  bottom: 5px;
+  left: 35px;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 25px;
+}
+
+.iapp-detail-image-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.card-detail:hover .iapp-feedback-button {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.iapp-detail-image {
+  width: 100%;
+}
+
+.iapp-detail-info {
+  padding: 1em;
+}
+
+.iapp-card-info-photo-credit {
+  color: $medium-grey;
+  font-size: 10px;
+}
+
+.iapp-card-back-photo-credit {
+  color: $medium-grey;
+  font-size: 0.8em;
+}
+
+.iapp-card-front-number{
+    // bottom: 5px;
+    color: $blue;
+    height: 60px;
+    left: 50%;
+    padding: 0.5em;
+    position: absolute;
+    transform: translate(-50%, 0);
+    width: 70px;
+
+    p {
+        bottom: 0;
+        color: $blue;
+        display: block;
+        font-size: 1rem;
+        margin: 0;
+        position: absolute;
+    }
+}
+
+.iapp-card-front-number-inner {
+    // color: $blue;
+    font-family: "Futura Today DemiBold", Arial, sans-serif;
+    font-size: 2em;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: translate( -50%, -50%);
+    top: 50%;
+}

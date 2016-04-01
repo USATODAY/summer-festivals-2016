@@ -1,0 +1,57 @@
+.iapp-festival-info-wrap {
+    font-family: "Futura Today DemiBold", Arial, sans-serif;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+    padding: 0 2em;
+    width: 600px;
+    @extend .group;
+}
+
+.iapp-festival-name-header {
+    font-size: 2em;
+}
+
+.iapp-festival-location, .iapp-festival-date, .iapp-festival-info {
+    // display: inline;
+    font-family: "Futura Today Normal", Arial, sans-serif;
+    font-size: 1.4em;
+    margin: 0.25em 0;
+}
+
+.iapp-festival-detail-info {
+    // display: inline;
+    float: left;
+    max-width: calc(100% - 110px);
+    margin: 0 auto;
+    text-align: center;
+    width: 500px;
+    @extend .group;
+}
+
+.iapp-fest-info-arrow {
+    bottom: 25px;
+    cursor: pointer;
+    display: inline-block;
+    left: 50%;
+    transform: translate(0, 25%);
+    width: 50px;
+    img {
+        width: 100%;
+    }
+}
+
+.iapp-fest-info-next {
+    float: left;
+    // transform: translate(100%, 0);
+}
+
+.iapp-fest-info-previous {
+    float: left;
+    // transform: translate(-200%, 0);
+}
+
+.show-next .iapp-fest-info-next, .show-previous .iapp-fest-info-previous {
+    display: block;
+}

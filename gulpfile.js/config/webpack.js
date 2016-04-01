@@ -41,12 +41,26 @@ module.exports = function(env) {
           exclude: /node_modules/
         },
         {
+          test: /\.tmpl\.html/,
+          loader: 'ejs-loader'
+        },
+        {
           test: /\.css/,
           loader: 'style-loader!css-loader'
+        },
+        {
+          test: /isotope-layout/,
+          loader: 'imports?define=>false&this=>window'
         }
       ]
     }
   };
+
+  webpackConfig.plugins.push(
+    new webpack.ProvidePlugin({
+        _:"lodash"
+    })
+  );
 
   if (env !== 'test') {
     webpackConfig.entry = {
