@@ -1,14 +1,14 @@
 .iapp-menu-panel {
   background: transparentize(white, 0);
   border-radius: 15px;
-  bottom: 128px;
+  top: 128px;
   @include BoxShadowHelper(3);
   color: $dark-grey;
   // float: left;
   // margin-left: -2.5%;
   left: 25%;
   padding: 2em;
-  position: fixed;
+  position: absolute;
   transition: transform 400ms ease;
   width: 50%;   
   z-index: 200;
@@ -20,15 +20,15 @@
 }
 
 .iapp-menu-control-area {
-  bottom: 0;
-  height: 80px;
-  position: fixed;
-  right: 0;
+  // bottom: 0;
+  height: 100px;
+  // position: fixed;
+  // right: 0;
   width: 100%;
   z-index: 200;
 
   @media (max-width: $mid-break) {
-    height: 75px;
+    // height: 75px;
     width: 100%;
   }
 }
@@ -36,7 +36,7 @@
 .iapp-menu-hide {
     // position: absolute;
   .iapp-menu-panel {
-    transform: translate(0, 200%);
+    transform: translate(0, -200%);
   }
   .iapp-menu-button {
     transform: translate(50%, 0);
@@ -47,18 +47,22 @@
   .iapp-menu-close {
     transform: translate(50%, 0);
   }
+
+  .iapp-menu-button {
+    transform: translate(50%, -200%);
+  }
 }
 
 @media (max-width: $mid-break) {
   .iapp-menu-panel {
-    border-radius: 0;
-    box-shadow: none;
-    float: none;
-    height: 100%;
+    // border-radius: 0;
+    // box-shadow: none;
+    // float: none;
+    // height: 100%;
     left: 0;
-    overflow-y: auto;
-    position: fixed;
-    top: 0;
+    // overflow-y: auto;
+    // position: fixed;
+    // top: 0;
     width: 100%;  
     // z-index: 20;
     
@@ -69,7 +73,7 @@
         
     } 
     .iapp-menu-hide .iapp-menu-panel {
-        transform: translate(0, 100%);
+        // transform: translate(0, 100%);
         
     }
 }
@@ -83,20 +87,20 @@
 }
 
 .iapp-menu-close {
-    bottom: 25px;
+    // bottom: 25px;
     position: absolute;
     right: 50%;
-    transform: translate(50%, 200%);
+    transform: translate(50%, -200%);
     transition: transform 500ms ease;
     z-index: 100;
 }
 
 .iapp-menu-button {
-  bottom: 25px;
+  // bottom: 25px;
   border-radius: 50%;
   position: absolute;
   right: 50%;
-  transform: translate(50%, 200%);
+  transform: translate(50%, 0%);
   transition: transform 500ms ease;
   z-index: 100;
 }
@@ -247,4 +251,14 @@
     bottom: -20px;
 }
 
-
+.iapp-triangle-up {
+    width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid white;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50%;
+    top: -20px;
+}

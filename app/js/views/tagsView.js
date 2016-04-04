@@ -43,7 +43,6 @@ module.exports = Backbone.View.extend({
         //     });
         // });
 
-        this.$el.append('<div class="iapp-filter-button iapp-filter-button-clear">Show All</div>');
         
         return this;
     },

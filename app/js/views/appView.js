@@ -44,7 +44,7 @@ render: function() {
       header: "USA TODAY Summer Music Festivalaganza", 
       contact_email: ""
   }));
-  this.$('.iapp-festival-info-wrap').html(this.searchTemplate());
+  this.$('.iapp-festival-search-wrap').html(this.searchTemplate());
   
 },
 
@@ -76,10 +76,15 @@ onSetFilter: function(activeFestival) {
     var showPrevious = activeFestival.getIndex() > 0;
     var showNext = activeFestival.getIndex() < activeFestival.collection.length - 1;
     this.$(".iapp-festival-info-wrap").html(this.festInfoTemplate({'festival': activeFestival.toJSON(), 'showPrevious': showPrevious, 'showNext': showNext}));
+    if (activeFestival.get('tagName') == 'all') {
+        this.$('.iapp-festival-search-wrap').show();
+    } else {
+        // this.$('.iapp-festival-search-wrap').hide();
+    }
 },
 
 onClearFilter: function() {
-    this.$('.iapp-festival-info-wrap').html(this.searchTemplate());
+    this.$('.iapp-festival-search-wrap').show();
 },
 
 onRouteShare: function() {

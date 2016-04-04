@@ -21,6 +21,7 @@ module.exports = Backbone.View.extend({
     initialize: function() {
 
         this.listenTo(Backbone, "set:filter", this.onSetFilter);
+        this.listenTo(Backbone, "search", this.onSearch);
         this.listenTo(this.model, 'change:isMenuOpen', this.updateState);
         this.render();
     },
@@ -29,6 +30,7 @@ module.exports = Backbone.View.extend({
         this.updateState();
         this.$el.html(this.template(this.model.toJSON()));
         this.addSubViews();
+        Backbone.trigger('set:filter', this.tagsCollection.models[0]);
         return this;
     },
     addSubViews: function() {
@@ -81,6 +83,10 @@ module.exports = Backbone.View.extend({
     onResetClick: function() {
         Backbone.trigger('app:reset');
         router.navigate('_');
+    },
+    
+    onSearch: function() {
+        Backbone.trigger('set:filter', this.tagsCollection.models[0]);
     }
 
 });

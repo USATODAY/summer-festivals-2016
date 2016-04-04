@@ -7,7 +7,9 @@
 <div class="iapp-festival-detail-info">
     
     <h2 class="iapp-festival-name-header"><%= festival.name %></h2>
+    <% if(festival.url) { %>
     <h3 class="iapp-festival-location"><%= festival.location %>, <%= festival.date %>, <a href="<%= festival.url %>" target="_blank">More Info</a></h3>
+    <% } %>
 </div>
 <% if (showNext) {%>
         <div class="iapp-fest-info-next iapp-fest-info-arrow">

@@ -93,7 +93,12 @@ unveilImages: function() {
 
 
 filter: function(activeFilter) {
-    var filterStr = "." + activeFilter.get('tagName');
+    var filterStr;
+    if (activeFilter.get('tagName') == 'all') {
+        filterStr = '*'
+    } else {
+        filterStr = "." + activeFilter.get('tagName');
+    }
     this.isotope.arrange({ filter: filterStr });
     this.$noResultsMessage.hide();
     Backbone.trigger('setHeight');

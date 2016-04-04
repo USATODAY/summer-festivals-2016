@@ -14,6 +14,11 @@ module.exports =  {
         var _this = this;
         jQuery.getJSON(dataURL, function(data) {        
             _this.data = _this.cleanSearchNames(data);
+            _this.data.festivals = [{
+                'name': 'All bands',
+                'tagName': 'all'
+            }].concat(_this.data.festivals);
+            console.log(data);
             Backbone.trigger("data:ready", this);
         });
     },
