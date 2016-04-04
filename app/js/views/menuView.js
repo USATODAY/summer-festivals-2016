@@ -58,12 +58,12 @@ module.exports = Backbone.View.extend({
         }
     },
     onCloseClick: function() {
-        Analytics.trackEvent("Close menu button clicked");
+        Analytics.click("Close menu button clicked");
         this.model.set({isMenuOpen: false});
         // $('body,html').removeClass('iapp-no-scroll');
     },
     onMenuClick: function() {
-        Analytics.trackEvent("Open menu button clicked");
+        Analytics.click("Open menu button clicked");
         this.model.set({isMenuOpen: true});
         if (window.innerWidth < this.model.mobileThreshhold) {
              // $('body,html').addClass('iapp-no-scroll');

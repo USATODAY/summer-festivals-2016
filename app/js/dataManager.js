@@ -5,13 +5,7 @@ var Backbone = require('backbone');
 
 var hostname = window.location.hostname;
 
-var dataURL;
-
-if ((hostname == "localhost" || hostname == "10.0.2.2")) {
-    dataURL = 'data/data.json';
-} else {
-    dataURL = "http://" + hostname + "/services/webproxy/?url=http://www.gannett-cdn.com/experiments/usatoday/2015/04/festivals/data/data.json";
-}
+var dataURL = 'data/data.json';
 
 
 module.exports =  {
@@ -20,10 +14,7 @@ module.exports =  {
         var _this = this;
         jQuery.getJSON(dataURL, function(data) {        
             _this.data = _this.cleanSearchNames(data);
-
-            console.log(_this.data);
             Backbone.trigger("data:ready", this);
-
         });
     },
 

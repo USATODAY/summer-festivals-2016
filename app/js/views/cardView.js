@@ -45,7 +45,7 @@ module.exports = Backbone.View.extend({
   },
 
   setHighlight: function() {
-    Analytics.trackEvent("opened card");
+    Analytics.click("opened card");
     this.model.set({
       "highlight": true
     });

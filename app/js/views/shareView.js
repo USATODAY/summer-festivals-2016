@@ -23,7 +23,7 @@ module.exports = Backbone.View.extend({
     },
     onShareButtonClick: function(e) {
         e.preventDefault();
-        Analytics.trackEvent('Share button clicked: ' + jQuery(e.currentTarget).attr('id'));
+        Analytics.click('Share button clicked: ' + jQuery(e.currentTarget).attr('id'));
 
       this.windowPopup(e.currentTarget.href, 500, 300);
     },

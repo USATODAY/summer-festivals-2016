@@ -2,6 +2,7 @@ var $ = require('jquery');
 var _ = require('lodash');
 var Backbone = require('backbone');
 var TagModel = require('../models/TagModel');
+var router = require('../router');
 
 module.exports = Backbone.Collection.extend({
     model: TagModel,
@@ -37,12 +38,12 @@ module.exports = Backbone.Collection.extend({
     },
 
     goToNext: function() {
-        nextFilter = this.at(this._currentIndex + 1);
+        var nextFilter = this.at(this._currentIndex + 1);
         nextFilter.set({'isActive': true});
     },
 
     goToPrevious: function() {
-        previousFilter = this.at(this._currentIndex - 1);
+        var previousFilter = this.at(this._currentIndex - 1);
         previousFilter.set({'isActive': true});
     },
 

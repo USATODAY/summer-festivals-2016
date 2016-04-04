@@ -51,7 +51,6 @@ render: function() {
   
   var $el = this.$el;
   var _this = this;
-  console.log(this.el)
   this.isotope = new Isotope(_this.el, {
       itemSelector: '.card',
       transitionDuration: (!config.isMobile) ? '0' : 0,
@@ -94,9 +93,10 @@ unveilImages: function() {
 
 
 filter: function(activeFilter) {
-    filterStr = "." + activeFilter.get('tagName');
+    var filterStr = "." + activeFilter.get('tagName');
     this.isotope.arrange({ filter: filterStr });
     this.$noResultsMessage.hide();
+    Backbone.trigger('setHeight');
     _.delay(function() {
       $(window).trigger('scroll');
     }, 1000);
@@ -113,9 +113,7 @@ searchByName: function(name) {
             return itemName.indexOf(name) > -1;
         }
     });
-
-    numResults = this.$el.data('isotope').filteredItems.length;
-    console.log(numResults);
+    var numResults = this.isotope.filteredItems.length;
     if (numResults == 0) {
         // this.$el.append(this.noResultsMessage());
         this.$noResultsMessage.show();
@@ -129,12 +127,14 @@ relayout: _.throttle(function() {
   this.isotope.layout();
   _.delay(function() {
       $(window).trigger('scroll');
+      Backbone.trigger('setHeight');
     }, 1000);
 }, 500),
 
 clearFilters: function(e) {
   this.isotope.arrange({ filter: "*"});
   this.$noResultsMessage.hide();
+  Backbone.trigger('setHeight');
 },
 
 onRouteShare: function() {

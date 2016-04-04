@@ -18,12 +18,10 @@ module.exports = Backbone.Model.extend( {
         if (this.get('isActive')) {
             Backbone.trigger('set:filter', this);
         }
-
-        console.log(this.getIndex());
     },
 
     getIndex: function() {
-        index = this.collection.indexOf(this);
+        var index = this.collection.indexOf(this);
         return index;
     }
 });

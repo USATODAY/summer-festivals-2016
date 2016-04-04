@@ -1,4 +1,5 @@
 var jQuery = require('jquery');
+var $ = jQuery;
 var _ = require('lodash');
 var Backbone = require('backbone');
 var Analytics = require('../lib/analytics');

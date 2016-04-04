@@ -73,11 +73,8 @@ onPrevious: function() {
 },
 
 onSetFilter: function(activeFestival) {
-    showPrevious = activeFestival.getIndex() > 0;
-    if (showPrevious) {
-        console.log("show previous");
-    }
-    showNext = activeFestival.getIndex() < activeFestival.collection.length - 1;
+    var showPrevious = activeFestival.getIndex() > 0;
+    var showNext = activeFestival.getIndex() < activeFestival.collection.length - 1;
     this.$(".iapp-festival-info-wrap").html(this.festInfoTemplate({'festival': activeFestival.toJSON(), 'showPrevious': showPrevious, 'showNext': showNext}));
 },
 
@@ -96,14 +93,13 @@ onAppReset: function() {
 },
 
 onBeginClick: function() {
-    console.log('begin');
-    Analytics.trackEvent('Begin button clicked');
+    Analytics.click('Begin button clicked');
     this.$('.iapp-begin-button').addClass('iapp-transition-out');
     this.$('.iapp-intro-wrap').fadeOut();
 },
 
 onRouteLastWeek: function() {
-    Analytics.trackEvent('Last week guests page viewed');
+    Analytics.click('Last week guests page viewed');
     this.$el.addClass('iapp-last-week-route');
     this.menuView.model.set({'isMenuOpen': false});
     this.$('.iapp-last-week-radio').eq(1).prop('checked', true);

@@ -17,7 +17,7 @@ module.exports = Backbone.View.extend({
         return this;
     },
     onClick: function() {
-        Analytics.trackEvent('Filter clicked');
+        Analytics.click('Filter clicked');
         //toggle active state of model when tag is clicked
         this.model.set({'isActive': !this.model.get('isActive')});
 
