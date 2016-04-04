@@ -4,6 +4,7 @@ var Backbone = require('backbone');
 module.exports = Backbone.Model.extend({
     defaults: {
         highlight: false,
+        top: 0,
         festivals: []
     },
     initialize: function() {

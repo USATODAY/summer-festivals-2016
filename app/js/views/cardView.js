@@ -11,7 +11,6 @@ module.exports = Backbone.View.extend({
   },
 
   attributes: function() {
-  
       return {
         "data-search-name": this.model.get("searchName")
       }
@@ -44,10 +43,17 @@ module.exports = Backbone.View.extend({
     return this;
   },
 
-  setHighlight: function() {
+  setHighlight: function(e) {
     Analytics.click("opened card");
+    var winBottomPadding = 400;
+    var winHeight = window.innerHeight;
+    var modalTop = e.clientY;
+    if ((modalTop + winBottomPadding) > winHeight) {
+        modalTop = winHeight - winBottomPadding;
+    }
     this.model.set({
-      "highlight": true
+      "highlight": true,
+      "top": modalTop
     });
   }
 

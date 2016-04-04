@@ -1,11 +1,13 @@
 .graphic-wrapper {
-    border-top: solid 10px $blue;
-    border-radius: 8px;
-    @include BoxShadowHelper(1);
-    margin: 3px auto;
+    // border-top: solid 10px $blue;
+    // border-radius: 8px;
+    // @include BoxShadowHelper(1);
+    margin: 0 auto;
     max-width: 540px;
     overflow: hidden;
-    width: calc(100% - 6px);
+    padding: 2em 0;
+    // width: calc(100% - 6px);
+    width: 100%;
 }
 
 .graphic-header {
@@ -16,4 +18,8 @@
 .graphic-footer {
     background: $extra-light-grey;
     padding: 1em;
+}
+
+body {
+    background: none;
 }

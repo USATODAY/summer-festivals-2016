@@ -32,7 +32,7 @@ module.exports = Backbone.View.extend({
     },
     render: function() {
       this.$el.empty();
-      $('body').addClass('iapp-no-scroll');
+      // $('body').addClass('iapp-no-scroll');
 
       if (this.model.get('isLiked')) {
         this.$el.addClass('iapp-liked');
