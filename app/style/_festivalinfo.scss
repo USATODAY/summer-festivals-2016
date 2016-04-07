@@ -10,7 +10,8 @@
 }
 
 .iapp-festival-name-header {
-    font-size: 2em;
+    font-family: "Futura Today DemiBold";
+    font-size: 1.5em;
 }
 
 .iapp-festival-location, .iapp-festival-date, .iapp-festival-info {
@@ -39,6 +40,12 @@
     width: 50px;
     img {
         width: 100%;
+    }
+
+    &.iapp-disabled {
+        opacity: 0;
+        position: relative;
+        left: -9999px;
     }
 }
 

@@ -2,7 +2,12 @@
         <div class="iapp-fest-info-previous iapp-fest-info-arrow">
                 <img src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/festivals/img/arrow-left.svg" alt="previous" />
             </div>
-    <% } %>
+            <% } else { %>
+        <div class="iapp-fest-info-previous iapp-disabled iapp-fest-info-arrow">
+                <img src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/festivals/img/arrow-left.svg" alt="previous" />
+            </div>
+
+            <% } %>
 
 <div class="iapp-festival-detail-info">
     
@@ -13,6 +18,10 @@
 </div>
 <% if (showNext) {%>
         <div class="iapp-fest-info-next iapp-fest-info-arrow">
+            <img src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/festivals/img/arrow-right.svg" alt="next" />
+        </div>
+            <% } else { %>
+        <div class="iapp-fest-info-next iapp-disabled iapp-fest-info-arrow">
             <img src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/festivals/img/arrow-right.svg" alt="next" />
         </div>
     <% } %>
