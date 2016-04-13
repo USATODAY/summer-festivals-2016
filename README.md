@@ -1,4 +1,4 @@
-USAT-Graphics-Kit
+2016 Summer festivals interactive
 ============
 
 # What this kit does
@@ -60,3 +60,19 @@ Subsequently track page views and events with
 Analytics.click($EVENT_NAME)
 Analytics.pageView($EVENT_NAME)
 ```
+
+## Updating project data
+Set up a Python virtual environment, install python dependencies with 
+```
+pip install -r requirements.txt
+```
+
+Download a copy of the spreadsheet from Google Sheets as an .xlxs file, and rename to data.xlsx and save in the data_tools/src directory.
+
+Then run 
+
+```
+python data_tools/formatdata.py
+```
+
+This will convert the file into usable json at data_tools/output/data.json. Copy this file into app/data and you're good to go.
