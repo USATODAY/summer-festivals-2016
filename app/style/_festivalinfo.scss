@@ -12,6 +12,10 @@
 .iapp-festival-name-header {
     font-family: "Futura Today DemiBold";
     font-size: 1.5em;
+
+    @media (max-width: 500px) {
+        font-size: 1.2em;
+    }
 }
 
 .iapp-festival-location, .iapp-festival-date, .iapp-festival-info {
@@ -19,6 +23,9 @@
     font-family: "Futura Today Normal", Arial, sans-serif;
     font-size: 1.4em;
     margin: 0.25em 0;
+    @media (max-width: 500px) {
+        font-size: 1em;
+    }
 }
 
 .iapp-festival-detail-info {
@@ -27,6 +34,7 @@
     max-width: calc(100% - 110px);
     margin: 0 auto;
     text-align: center;
+    padding: 0 0.5em;
     width: 500px;
     @extend .group;
 }

@@ -15,7 +15,7 @@ module.exports =  {
         jQuery.getJSON(dataURL, function(data) {        
             _this.data = _this.cleanSearchNames(data);
             _this.data.festivals = [{
-                'name': 'All bands',
+                'name': 'Bands from all festivals',
                 'tagName': 'all'
             }].concat(_this.data.festivals);
             console.log(data);
